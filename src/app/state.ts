@@ -1,7 +1,7 @@
 import { observable } from 'mobx';
 
 class AppState {
-  @observable timer = 0;
+  @observable timer;
   constructor() {
     this.timer = 0;
   }
