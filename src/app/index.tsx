@@ -9,8 +9,8 @@ import { TimerStore } from './stores';
 import registerServiceWorker from './registerServiceWorker';
 
 import { Root } from './containers/Root';
-import View from './View';
-import View2 from './View2';
+import View from './containers/View';
+import View2 from './containers/View2';
 
 useStrict(true);
 

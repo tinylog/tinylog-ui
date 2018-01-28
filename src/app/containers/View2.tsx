@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
-import { TimerStore } from './stores';
+import { TimerStore } from '../stores';
 import { RouterStore } from 'mobx-react-router';
 import { RouteComponentProps } from 'react-router';
 
