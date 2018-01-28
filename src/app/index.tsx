@@ -7,8 +7,8 @@ import { Provider } from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { TimerStore } from './stores';
 import registerServiceWorker from './registerServiceWorker';
-
 import { Root } from './containers/Root';
+import './index.css';
 import View from './containers/View';
 import View2 from './containers/View2';
 

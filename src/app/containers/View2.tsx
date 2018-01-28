@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react';
 import { TimerStore } from '../stores';
 import { RouterStore } from 'mobx-react-router';
 import { RouteComponentProps } from 'react-router';
-
+import { Button } from 'antd';
 export interface ViewProps extends RouteComponentProps<{}> {
   timer: TimerStore;
   router: RouterStore;
@@ -17,12 +17,12 @@ class View extends React.Component<ViewProps, {}> {
     return (
       <div>
         <h1>Test2</h1>
-        <button onClick={this.onReset}>
+        <Button onClick={this.onReset}>
           Seconds passed: {this.props.timer.timer}
-        </button>
-        <button onClick={this.addTimer}>Add</button>
-        <button onClick={this.subTimer}>Sub</button>
-        <button onClick={() => goBack()}>Go Back</button>
+        </Button>
+        <Button onClick={this.addTimer}>Add</Button>
+        <Button onClick={this.subTimer}>Sub</Button>
+        <Button onClick={() => goBack()}>Go Back</Button>
       </div>
     );
   }
