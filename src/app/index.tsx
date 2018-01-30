@@ -9,8 +9,7 @@ import { TimerStore } from './stores';
 import registerServiceWorker from './registerServiceWorker';
 import { Root } from './containers/Root';
 import './index.css';
-import View from './containers/View';
-import View2 from './containers/View2';
+import App from './containers/App';
 
 useStrict(true);
 
@@ -28,14 +27,8 @@ ReactDOM.render(
       <Router history={history}>
         <Switch>
           <Route
-            exact={true}
             path="/"
-            component={View}
-          />
-          <Route 
-            exact={true}
-            path="/view2"
-            component={View2}
+            component={App}
           />
         </Switch>
       </Router>
