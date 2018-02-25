@@ -20,6 +20,7 @@ export interface AppProps extends RouteComponentProps<{}> {
 @observer
 class App extends React.Component<AppProps, {}> {
   render () {
+    console.log(this.props.router);
     return (
       <Layout style={{ height: '100%' }}>
         <Header/>
