@@ -5,11 +5,12 @@ import { createBrowserHistory } from 'history';
 import { useStrict } from 'mobx';
 import { Provider } from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
-import { TimerStore } from './stores';
+import { TimerStore, TokenStore } from './stores';
 import registerServiceWorker from './registerServiceWorker';
 import { Root } from './containers/Root';
 import './index.css';
 import App from './containers/App';
+import Auth from './containers/Auth';
 
 useStrict(true);
 
@@ -17,6 +18,7 @@ const browserHistory = createBrowserHistory();
 const routerStore =  new RouterStore();
 const history = syncHistoryWithStore(browserHistory, routerStore);
 const rootStore = {
+  token: new TokenStore(),
   timer: new TimerStore(),
   router: routerStore
 };
@@ -26,6 +28,10 @@ ReactDOM.render(
     <Root>
       <Router history={history}>
         <Switch>
+          <Route
+            path="/auth"
+            component={Auth}
+          />
           <Route
             path="/"
             component={App}

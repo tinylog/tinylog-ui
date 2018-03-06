@@ -1,6 +1,6 @@
 export const headerPath = [
   {
-    title: '个人中心',
+    title: '我的站点',
     path: '/view'
   },
   {
@@ -11,13 +11,21 @@ export const headerPath = [
 
 export const siderPath = [
   {
-    title: '流量分析',
+    title: '基本信息',
+    icon: 'global',
+    menuItems: [{
+      title: '网站信息',
+      path: '/view'
+    }]
+  },
+  {
+    title: '性能分析',
     icon: 'laptop',
     menuItems: [{
-      title: '访客统计',
+      title: '',
       path: '/view'
     }, {
-      title: '黑白名单',
+      title: '个人信息',
       path: '/view2'
     }]
   },

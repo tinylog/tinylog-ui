@@ -1,0 +1,19 @@
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.auth .login-form {
+  max-width: 300px;
+}
+
+.auth .login-form-forgot {
+  float: right;
+}
+
+.auth .login-form-button {
+  width: 100%;
+}
