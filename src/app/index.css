@@ -1,4 +1,5 @@
 @import '~antd/dist/antd.css';
+@import './reset.css';
 
 #root, #root > div {
   height: 100%;

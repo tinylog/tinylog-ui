@@ -17,19 +17,15 @@ const menuItems = () => {
 };
 
 class HeaderLayout extends React.Component<{}, {}> {
-  handleMenuClick ({ item, key, keyPath }: any) {
-    console.log('test');
-  }
   render () {
     return (
       <Header className="header">
-        <div className="logo">Data Center</div>
+        <div className="logo">Tiny Log</div>
         <Menu
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['2']}
           style={{ lineHeight: '64px' }}
-          onClick={this.handleMenuClick}
         >
         {menuItems()}
         </Menu>
