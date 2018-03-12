@@ -1,0 +1,23 @@
+.tl-detail-container {
+  overflow: hidden;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 16px;
+}
+
+.tl-detail-form {
+  overflow: hidden;
+}
+
+.tl-detail-container .tl-detail-form p {
+  float: left;
+  width: 33.3%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.tl-detail-container .tl-detail-form span {
+  display: inline-block;
+  min-width: 70px;
+  padding-right: 4px;
+}

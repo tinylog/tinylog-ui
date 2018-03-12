@@ -11,6 +11,7 @@ import { Root } from './containers/Root';
 import './index.css';
 import App from './containers/App';
 import Auth from './containers/Auth';
+import './macarons';
 
 useStrict(true);
 

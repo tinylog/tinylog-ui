@@ -46,7 +46,7 @@ class App extends React.Component<AppProps, AppState> {
   render () {
     console.log(this.props.router);
     return (
-      <Layout style={{ height: '100%' }}>
+      <Layout style={{ height: '100%', minWidth: 1280 }}>
         <Header/>
         <Layout>
           <Sider onMenuItemClick={this.handleMenuItemClick}/>
