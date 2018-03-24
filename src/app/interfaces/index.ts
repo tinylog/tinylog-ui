@@ -1,9 +1,17 @@
 import { RouteComponentProps } from 'react-router';
-import { TokenStore } from '../stores';
+import { AuthStore } from '../stores';
 
 export interface IBase extends RouteComponentProps<{}> {
 }
 
 export interface IAuth extends IBase {
-  token: TokenStore;
+  auth: AuthStore;
+}
+
+export interface ISignIn {
+  email: string;
+  password: string;
+}
+
+export interface ISignUp extends ISignIn {
 }

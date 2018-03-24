@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react';
 import { RouteComponentProps, Route } from 'react-router';
 import { RouterStore } from 'mobx-react-router';
 import { Layout } from 'antd';
-import { TimerStore } from '../../stores';
+import { TimerStore, AuthStore } from '../../stores';
 import { autobind } from 'core-decorators';
 import Header from '../../layout/Header';
 import Sider from '../../layout/Sider';
@@ -22,6 +22,7 @@ const { Content } = Layout;
 interface AppProps extends RouteComponentProps<{}> {
   timer: TimerStore;
   router: RouterStore;
+  auth: AuthStore;
 }
 
 interface AppState {

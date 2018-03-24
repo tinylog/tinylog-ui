@@ -7,7 +7,7 @@
 }
 
 .auth .login-form {
-  max-width: 300px;
+  width: 300px;
 }
 
 .auth .login-form-forgot {
