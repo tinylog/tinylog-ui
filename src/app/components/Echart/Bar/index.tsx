@@ -4,6 +4,7 @@ import echarts from 'echarts';
 interface IBar {
   width: number;
   height: number;
+  title: string;
 }
 
 class Bar extends React.Component<IBar, {}> {
@@ -13,7 +14,7 @@ class Bar extends React.Component<IBar, {}> {
       title: {
         left: 'center',
         top: 'top',
-        text: '资源时长',
+        text: this.props.title,
         textStyle: {
           fontSize: 14
         }

@@ -17,6 +17,7 @@ import View from '../View';
 import View2 from '../View2';
 import BaseMsg from '../../containers/Modules/BaseMsg';
 import AssetsMsg from '../../containers/Modules/AssetsMsg';
+import WebPerformance from '../../containers/Modules/WebPerformance';
 
 const { Content } = Layout;
 
@@ -57,6 +58,7 @@ class App extends React.Component<AppProps, AppState> {
               <ContentHeader title={this.state.title}/>
               <Content style={{ margin: 16, padding: 16,  minHeight: 750, background: '#fff' }}>
                 <Route exact={true} path="/base/webMsg" component={BaseMsg}/>
+                <Route exact={true} path="/performance/webMsg" component={WebPerformance}/>
                 <Route exact={true} path="/performance/assetsMsg" component={AssetsMsg}/>
                 <Route exact={true} path="/view" component={View}/>
                 <Route exact={true} path="/view2" component={View2}/>

@@ -22,11 +22,11 @@ export const siderPath = [
     title: '性能分析',
     icon: 'laptop',
     menuItems: [{
+      title: '网站性能',
+      path: '/performance/webMsg'
+    }, {
       title: '资源信息',
       path: '/performance/assetsMsg'
-    }, {
-      title: '个人信息',
-      path: '/view2'
     }]
   },
   {

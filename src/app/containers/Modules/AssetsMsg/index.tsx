@@ -10,7 +10,7 @@ class AssetsMsg extends React.Component<{}, {}> {
   render() {
     const title = '资源信息';
     const messages = [
-      { name: '资源数:', value: '5' },
+      { name: '资源数:', value: '5个' },
       { name: '总时长:', value: '20s' },
       { name: '平均时长:', value: '2s' }
     ];
@@ -64,8 +64,8 @@ class AssetsMsg extends React.Component<{}, {}> {
         <Detail title={title} messages={messages} />
         <Title title="网站资源详情" />
         <div className="assets-msg-data-cont">
-          <Bar width={500} height={300} />
-          <DoughnutPie width={500} height={300} />
+          <Bar title="资源时长" width={500} height={300} />
+          <DoughnutPie title="资源类型占比" width={500} height={300} />
         </div>
         <Table columns={columns} dataSource={data} />
       </div>

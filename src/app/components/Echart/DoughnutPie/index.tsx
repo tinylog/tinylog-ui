@@ -4,6 +4,7 @@ import echarts from 'echarts';
 interface IDoughnutPie {
   width: number;
   height: number;
+  title: string;
 }
 
 class DoughnutPie extends React.Component<IDoughnutPie, {}> {
@@ -13,7 +14,7 @@ class DoughnutPie extends React.Component<IDoughnutPie, {}> {
       title: {
         left: 'center',
         top: 'top',
-        text: '资源类型占比',
+        text: this.props.title,
         textStyle: {
           fontSize: 14
         }

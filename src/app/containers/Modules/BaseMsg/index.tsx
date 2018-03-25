@@ -41,7 +41,7 @@ class BaseMsg extends React.Component<{}, BaseMsgState> {
       { name: '域名:', value: 'www.tinylog.org' },
       { name: 'ip地址:', value: '1000' },
       { name: '健康指标:', value: '正常' },
-      { name: '当前用户:', value: '1000' }
+      { name: '用户数量:', value: '1000个' }
     ];
     return (
       <div>
