@@ -4,16 +4,18 @@ import echarts from 'echarts';
 interface ISommthedLine {
   width: number;
   height: number;
+  id: string;
+  title: string
 }
 
 class SommthedLine extends React.Component<ISommthedLine, {}> {
   componentDidMount () {
-    let chart = echarts.init(document.getElementById('sommthedLine'), 'macarons');
+    let chart = echarts.init(document.getElementById(this.props.id), 'macarons');
     chart.setOption({
       title: {
         left: 'center',
-        top: 'bottom',
-        text: '浏览量(pv)',
+        top: 'top',
+        text: this.props.title,
         textStyle: {
           fontSize: 14
         }
@@ -34,7 +36,7 @@ class SommthedLine extends React.Component<ISommthedLine, {}> {
   }
   render () {
     return (
-      <div id="sommthedLine" style={{display: 'inline-block', width: this.props.width, height: this.props.height}}/>
+      <div id={this.props.id} style={{display: 'inline-block', width: this.props.width, height: this.props.height}}/>
     );
   }
 }

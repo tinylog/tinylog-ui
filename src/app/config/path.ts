@@ -15,15 +15,15 @@ export const siderPath = [
     icon: 'global',
     menuItems: [{
       title: '网站信息',
-      path: '/baseMsg/webMsg'
+      path: '/base/webMsg'
     }]
   },
   {
     title: '性能分析',
     icon: 'laptop',
     menuItems: [{
-      title: '资源性能',
-      path: '/view'
+      title: '资源信息',
+      path: '/performance/assetsMsg'
     }, {
       title: '个人信息',
       path: '/view2'
