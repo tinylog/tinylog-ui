@@ -11,18 +11,24 @@ import './style.css';
 interface SignInState extends ISignIn {
 }
 
-@inject('token', 'auth')
+@inject('auth', 'router')
 @autobind
 @observer
 class SignIn extends React.Component<IAuth, SignInState> {
-  async handleSubmit (e: any) {
-    e.preventDefault();
+  componentWillMount () {
+    if (localStorage.getItem('token')) {
+      this.props.history.push('/');
+      return;
+    }
+  }
+  async handleSubmit (event: any) {
+    event.preventDefault();
     const res = await this.props.auth.signIn({
       email: this.state.email,
       password: this.state.password
     })
     if (res.code === 200) {
-      console.log('finish')
+      this.props.history.push('/');
     }
   }
   handleInputEmail (event: any) {

@@ -31,7 +31,7 @@ interface AppState {
   title: string;
 }
 
-@inject('timer', 'router')
+@inject('timer', 'router', 'auth')
 @observer
 @autobind
 class App extends React.Component<AppProps, AppState> {
@@ -41,16 +41,21 @@ class App extends React.Component<AppProps, AppState> {
       title: '欢迎使用tinglog^-^'
     };
   }
+  componentWillMount () {
+    if (!localStorage.getItem('token')) {
+      this.props.history.push('/signIn');
+      return;
+    }
+  }
   handleMenuItemClick (title: string) {
     this.setState({
       title
     });
   }
   render () {
-    console.log(this.props.router);
     return (
       <Layout style={{ height: '100%', minWidth: 1280 }}>
-        <Header/>
+        <Header {...this.props} />
         <Layout>
           <Sider onMenuItemClick={this.handleMenuItemClick}/>
           <Layout>

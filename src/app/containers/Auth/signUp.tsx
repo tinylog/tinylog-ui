@@ -16,12 +16,21 @@ interface SignUpState extends ISignUp {
 @autobind
 @observer
 class SignUp extends React.Component<IAuth, SignUpState> {
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.auth.signUp({
+  componentWillMount () {
+    if (localStorage.getItem('token')) {
+      this.props.history.push('/');
+      return;
+    }
+  }
+  async handleSubmit (event: any) {
+    event.preventDefault();
+    const res = await this.props.auth.signUp({
       email: this.state.email,
       password: this.state.password
     })
+    if (res.code === 200) {
+      this.props.history.push('/');
+    }
   }
   handleInputEmail (event: any) {
     this.setState({
