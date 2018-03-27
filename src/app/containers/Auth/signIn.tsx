@@ -15,12 +15,15 @@ interface SignInState extends ISignIn {
 @autobind
 @observer
 class SignIn extends React.Component<IAuth, SignInState> {
-  handleSubmit = (e) => {
+  async handleSubmit (e: any) {
     e.preventDefault();
-    this.props.auth.signIn({
+    const res = await this.props.auth.signIn({
       email: this.state.email,
       password: this.state.password
     })
+    if (res.code === 200) {
+      console.log('finish')
+    }
   }
   handleInputEmail (event: any) {
     this.setState({
