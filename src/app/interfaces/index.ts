@@ -1,5 +1,6 @@
+import { IBase } from './index';
 import { RouteComponentProps } from 'react-router';
-import { AuthStore } from '../stores';
+import { AuthStore, BaseMsgStore } from '../stores';
 
 export interface IBase extends RouteComponentProps<{}> {
 }
@@ -14,4 +15,8 @@ export interface ISignIn {
 }
 
 export interface ISignUp extends ISignIn {
+}
+
+export interface IBaseMsg extends IAuth {
+  baseMsg: BaseMsgStore
 }

@@ -1,7 +1,7 @@
 export const headerPath = [
   {
     title: '我的站点',
-    path: '/view'
+    path: '/view',
   },
   {
     title: '控制面板',

@@ -1,6 +1,9 @@
 import * as React from 'react';
+import { inject, observer } from 'mobx-react';
+import { autobind } from 'core-decorators';
 import Detail from '../../../components/Detail';
 import SommthedLine from '../../../components/Echart/SmoothedLine';
+import { IBaseMsg } from '../../../interfaces'
 import Title from '../../../components/Title';
 import './index.css';
 
@@ -11,13 +14,19 @@ interface SommthedLineOpt {
   title: string;
 }
 
+interface BaseMsgProps extends IBaseMsg {
+}
+
 interface BaseMsgState {
   pvSommthedLineOpt: SommthedLineOpt;
   uvSommthedLineOpt: SommthedLineOpt;
 }
 
-class BaseMsg extends React.Component<{}, BaseMsgState> {
-  constructor (props: {}, state: BaseMsgState) {
+@inject('baseMsg', 'router')
+@autobind
+@observer
+class BaseMsg extends React.Component<BaseMsgProps, BaseMsgState> {
+  constructor (props: BaseMsgProps, state: BaseMsgState) {
     super(props, state);
     this.state = {
       pvSommthedLineOpt: {
@@ -33,6 +42,9 @@ class BaseMsg extends React.Component<{}, BaseMsgState> {
         title: '用户量(uv)'
       }
     };
+  }
+  componentWillMount () {
+    this.props.baseMsg.getWebSites();
   }
   render () {
     const title = '信息导航';

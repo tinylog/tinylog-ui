@@ -3,6 +3,9 @@ import { message } from 'antd';
 
 axios.interceptors.request.use(function (config: any) {
   config.baseURL = 'https://tinylog.ruiming.me';
+  config.headers = {
+    'XSRF-TOKEN': localStorage.getItem('token')
+  }
   return config;
 }, function (error: any) {
   return Promise.reject(error);
@@ -15,10 +18,12 @@ axios.interceptors.response.use(function (response: any) {
   response.data.data = data;
   return response;
 }, function (error: any) {
-  message.info(error.response.data.message || '服务器连接异常')
+  console.dir(error)
+  const msg = (error.response && error.response.data && error.response.data.message) || '服务器连接异常';
+  message.info(msg);
   return Promise.reject({
-    code: error.response.status,
-    msg: error.response.data.message
+    code: (error.response && error.response.status) || 500,
+    msg
   });
 });
 
