@@ -56,7 +56,7 @@ class App extends React.Component<AppProps, AppState> {
     return (
       <Layout style={{ height: '100%', minWidth: 1280 }}>
         <Header {...this.props} />
-        <Layout>
+        <Layout style={{paddingBottom: 10}}>
           <Sider onMenuItemClick={this.handleMenuItemClick}/>
           <Layout>
             <Content>

@@ -4,7 +4,7 @@ import { message } from 'antd';
 axios.interceptors.request.use(function (config: any) {
   config.baseURL = 'https://tinylog.ruiming.me';
   config.headers = {
-    'XSRF-TOKEN': localStorage.getItem('token')
+    authorization: `Bearer ${localStorage.getItem('token')}`
   }
   return config;
 }, function (error: any) {

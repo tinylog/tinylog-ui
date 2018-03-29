@@ -1,8 +1,8 @@
 .tl-detail-container {
   overflow: hidden;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #e8e8e8;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .tl-detail-form {

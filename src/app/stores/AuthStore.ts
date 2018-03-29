@@ -24,7 +24,7 @@ class AuthStore {
     try {
       const { data: res } = await api.signIn(data);
       this.id = res.data.id;
-      this.token = res.data.xsrfToken;
+      this.token = res.data.token;
       this.email = res.data.email;
       this.setLocalStorage({
         id: this.id,
@@ -41,7 +41,7 @@ class AuthStore {
     try {
       const { data: res } = await api.signUp(data);
       this.id = res.data.id;
-      this.token = res.data.xsrfToken;
+      this.token = res.data.token;
       this.email = res.data.email;
       this.setLocalStorage({
         id: this.id,

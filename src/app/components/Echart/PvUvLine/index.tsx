@@ -1,21 +1,23 @@
 import * as React from 'react';
 import echarts from 'echarts';
 
-export interface ISommthedLine {
+export interface IPvUvLine {
   width: number;
   height: number;
   id: string;
   title: string;
   xValues?: (string)[];
-  yValues?: (string)[];
+  pvValues?: (string)[];
+  uvValues?: (string)[];
 }
 
-class SommthedLine extends React.Component<ISommthedLine, ISommthedLine> {
-  constructor (props: ISommthedLine, state: ISommthedLine) {
+class PvUvLine extends React.Component<IPvUvLine, IPvUvLine> {
+  constructor (props: IPvUvLine, state: IPvUvLine) {
     super(props, state)
     this.state = Object.assign({}, this.props)
   }
-  componentWillReceiveProps (nextProps: ISommthedLine) {
+  componentWillReceiveProps (nextProps: IPvUvLine) {
+    console.log(nextProps)
     this.setState(nextProps, () => {
       this.initChart()
     })
@@ -28,11 +30,20 @@ class SommthedLine extends React.Component<ISommthedLine, ISommthedLine> {
     chart.setOption({
       title: {
         left: 'center',
-        top: 'top',
+        top: 'bottom',
         text: this.state.title,
         textStyle: {
           fontSize: 14
         }
+      },
+      tooltip: {
+        trigger: 'none',
+        axisPointer: {
+            type: 'cross'
+        }
+      },
+      legend: {
+        data: ['pv 访问数据', 'uv 访问数据']
       },
       xAxis: {
         type: 'category',
@@ -42,9 +53,15 @@ class SommthedLine extends React.Component<ISommthedLine, ISommthedLine> {
         type: 'value'
       },
       series: [{
-          data: this.state.yValues,
-          type: 'line',
-          smooth: true
+        name: 'pv 访问数据',
+        data: this.state.pvValues,
+        type: 'line',
+        smooth: true
+      }, {
+        name: 'uv 访问数据',
+        data: this.state.uvValues,
+        type: 'line',
+        smooth: true
       }]
     });
   }
@@ -55,4 +72,4 @@ class SommthedLine extends React.Component<ISommthedLine, ISommthedLine> {
   }
 }
 
-export default SommthedLine;
+export default PvUvLine;

@@ -1,5 +1,8 @@
 .base-msg-data-cont {
   display: flex;
   justify-content: space-around;
-  padding: 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8; 
 }
