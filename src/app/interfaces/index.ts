@@ -1,6 +1,12 @@
 import { IBase, IAssets } from './index';
 import { RouteComponentProps } from 'react-router';
-import { AuthStore, HostStore, OverViewStore, AssetsStore } from '../stores';
+import { 
+  AuthStore, 
+  HostStore, 
+  OverViewStore, 
+  AssetsStore,
+  CommonDataStore
+} from '../stores';
 
 export interface IBase extends RouteComponentProps<{}> {
 }
@@ -29,6 +35,12 @@ export interface IBaseMsgPage extends IAuth {
 export interface IAssetsMsgPage extends IAuth {
   host: HostStore;
   assets: AssetsStore;
+}
+
+// 来源信息页面
+export interface ICommonDataPage extends IAuth {
+  host: HostStore,
+  commmon: CommonDataStore
 }
 
 /**
@@ -65,4 +77,25 @@ export interface IAssets {
   avgLookupDomain: number;
   name: string;
   entryType: string;
+}
+
+// 网站性能信息
+export interface ICommonDataQuery extends IBaseQuery {
+  type?: string;
+}
+
+export interface ICommonData {
+  // referrer?: string;
+  // country?: string;
+  // lang?: string;
+  // region?: string;
+  // city?: string;
+  // osName?: string;
+  // browserName?: string;
+  // engineName?: string;
+  // hostname?: string;
+  // org?: string;
+  // count?: string;
+  value: string|number;
+  count: number
 }

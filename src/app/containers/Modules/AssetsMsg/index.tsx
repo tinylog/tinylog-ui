@@ -21,7 +21,7 @@ class AssetsMsg extends React.Component<AssetsMsgProps, {}> {
     await this.props.assets.getAssets({
       id: this.props.host.id,
       to: new Date().toISOString(),
-      from: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+      from: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString()
     });
   }
   render() {

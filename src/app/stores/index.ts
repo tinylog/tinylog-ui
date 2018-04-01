@@ -5,6 +5,7 @@ import AuthStore from './AuthStore';
 import HostStore from './HostStore';
 import OverViewStore from './OverViewStore';
 import AssetsStore from './AssetsStore';
+import CommonDataStore from './CommonDataStore'
 
 export {
   TimerStore,
@@ -13,5 +14,6 @@ export {
   AuthStore,
   HostStore,
   OverViewStore,
-  AssetsStore
+  AssetsStore,
+  CommonDataStore
 };

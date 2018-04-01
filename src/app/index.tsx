@@ -11,7 +11,8 @@ import {
   AuthStore, 
   HostStore, 
   OverViewStore,
-  AssetsStore
+  AssetsStore,
+  CommonDataStore
 } from './stores';
 import registerServiceWorker from './registerServiceWorker';
 import { Root } from './containers/Root';
@@ -33,6 +34,7 @@ const rootStore = {
   host: new HostStore(),
   overview: new OverViewStore(),
   assets: new AssetsStore(),
+  commmon: new CommonDataStore(),
   router: routerStore
 };
 

@@ -34,6 +34,20 @@ export const siderPath = [
     }]
   },
   {
+    title: '数据分析',
+    icon: 'bar-chart',
+    menuItems: [{
+      title: '来源地址',
+      path: '/common/referrer'
+    }, {
+      title: '环境系统',
+      path: '/common/system'
+    }, {
+      title: '用户分析',
+      path: '/common/user'
+    }]
+  },
+  {
     title: '错误上报',
     icon: 'notification',
     menuItems: [{
