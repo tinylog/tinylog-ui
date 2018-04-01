@@ -2,7 +2,7 @@ import * as React from 'react';
 import echarts from 'echarts';
 
 interface IDoughtPieVal {
-  name: string;
+  name: string|number;
   value: number|string;
 }
 

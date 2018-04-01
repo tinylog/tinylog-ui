@@ -79,7 +79,7 @@ class AssetsMsg extends React.Component<AssetsMsgProps, {}> {
           <Bar
             title="资源总时长"
             id="assetsBar"
-            width={500}
+            width={600}
             height={300}
             xValues={this.props.assets.assets.map(item => item.name)}
             yValues={this.props.assets.assets.map(item => item.avgDuration)}
@@ -88,7 +88,7 @@ class AssetsMsg extends React.Component<AssetsMsgProps, {}> {
             id="assetsDoughnutPie"
             legend={this.props.assets.assets.slice().map(item => item.entryType)}
             title="资源类型总时长占比" 
-            width={500}
+            width={600}
             height={300}
             vaules={this.props.assets.typeDuration.slice().map(item => ({ name: item.entryType, value: item.avgDuration }))}
           />

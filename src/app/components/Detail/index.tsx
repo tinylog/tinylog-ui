@@ -4,7 +4,7 @@ import './style.css';
 
 interface IMessages {
   name: string;
-  value: string;
+  value: string|number;
 }
 
 interface DetailProps {

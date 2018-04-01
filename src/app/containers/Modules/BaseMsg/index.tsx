@@ -33,13 +33,13 @@ class BaseMsg extends React.Component<BaseMsgProps, BaseMsgState> {
         title: 'pv uv 访问数据量'
       },
       avgVisitTimeOpt: {
-        width: 500,
+        width: 600,
         height: 300,
         id: 'avgVisitTime',
         title: '平均访问时长'
       },
       avgPageCountOpt: {
-        width: 500,
+        width: 600,
         height: 300,
         id: 'avgPageCount',
         title: '平均访问次数'

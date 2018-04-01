@@ -19,6 +19,7 @@ import BaseMsg from '../../containers/Modules/BaseMsg';
 import AssetsMsg from '../../containers/Modules/AssetsMsg';
 import Referrer from '../../containers/Modules/Referrer';
 import WebPerformance from '../../containers/Modules/WebPerformance';
+import System from '../../containers/Modules/System';
 
 const { Content } = Layout;
 
@@ -65,6 +66,7 @@ class App extends React.Component<AppProps, AppState> {
               <Content style={{ margin: 16, padding: 16,  minHeight: 750, background: '#fff' }}>
                 <Route exact={true} path="/base/webMsg" component={BaseMsg}/>
                 <Route exact={true} path="/common/referrer" component={Referrer}/>
+                <Route exact={true} path="/common/system" component={System}/>
                 <Route exact={true} path="/performance/webMsg" component={WebPerformance}/>
                 <Route exact={true} path="/performance/assetsMsg" component={AssetsMsg}/>
                 <Route exact={true} path="/view" component={View}/>
