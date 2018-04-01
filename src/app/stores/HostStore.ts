@@ -1,6 +1,7 @@
 import { observable, action, runInAction } from 'mobx';
 import api from '../api/host';
 
+// 当前用户使用的网站信息
 class HostStore {
   @observable id;
   @observable timezone;
@@ -15,7 +16,6 @@ class HostStore {
   @action async getHost () {
     try {
       const { data: res } = await api.getHost();
-      // !important mark
       runInAction(() => {
         this.id = res.data[0].id;
         this.timezone = res.data[0].timezone;

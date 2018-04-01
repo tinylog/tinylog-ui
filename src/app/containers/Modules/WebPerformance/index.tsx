@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Detail from '../../../components/Detail';
 import Title from '../../../components/Title';
-import DoughnutPie from '../../../components/Echart/DoughnutPie';
+// import DoughnutPie from '../../../components/Echart/DoughnutPie';
 import './index.css';
 
 class WebPerformance extends React.Component<{}, {}> {
@@ -24,7 +24,7 @@ class WebPerformance extends React.Component<{}, {}> {
         <div>
           <Title title="数据分析展示"/>
           <div className="web-performance-data-cont">
-            <DoughnutPie title="时长占比" width={500} height={300} />
+            {/* <DoughnutPie title="时长占比" width={500} height={300} /> */}
           </div>
         </div>
       </div>

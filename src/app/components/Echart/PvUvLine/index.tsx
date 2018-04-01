@@ -17,7 +17,6 @@ class PvUvLine extends React.Component<IPvUvLine, IPvUvLine> {
     this.state = Object.assign({}, this.props)
   }
   componentWillReceiveProps (nextProps: IPvUvLine) {
-    console.log(nextProps)
     this.setState(nextProps, () => {
       this.initChart()
     })

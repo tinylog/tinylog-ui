@@ -4,6 +4,7 @@ import TokenStore from './TokenStore';
 import AuthStore from './AuthStore';
 import HostStore from './HostStore';
 import OverViewStore from './OverViewStore';
+import AssetsStore from './AssetsStore';
 
 export {
   TimerStore,
@@ -11,5 +12,6 @@ export {
   TokenStore,
   AuthStore,
   HostStore,
-  OverViewStore
+  OverViewStore,
+  AssetsStore
 };

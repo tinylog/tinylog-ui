@@ -3,6 +3,7 @@ import { observable, action } from 'mobx';
 import api from '../api/auth'; 
 import { IUser } from '../models';
 
+// 登录注册状态
 class AuthStore {
   @observable token;
   @observable id;

@@ -1,20 +1,40 @@
 import * as React from 'react';
 import echarts from 'echarts';
 
+interface IDoughtPieVal {
+  name: string;
+  value: number;
+}
+
 interface IDoughnutPie {
   width: number;
   height: number;
+  id: string;
   title: string;
+  legend: (string)[];
+  vaules: (IDoughtPieVal)[];
 }
 
-class DoughnutPie extends React.Component<IDoughnutPie, {}> {
+class DoughnutPie extends React.Component<IDoughnutPie, IDoughnutPie> {
+  constructor (props: IDoughnutPie, state: IDoughnutPie) {
+    super(props, state);
+    this.state = Object.assign({}, this.props)
+  }
+  componentWillReceiveProps (nextProps: IDoughnutPie) {
+    this.setState(nextProps, () => {
+      this.initChart()
+    })
+  }
   componentDidMount() {
-    let chart = echarts.init(document.getElementById('doughnutPie'), 'macarons');
+    this.initChart()
+  }
+  initChart () {
+    let chart = echarts.init(document.getElementById(this.state.id), 'macarons');
     chart.setOption({
       title: {
         left: 'center',
         top: 'top',
-        text: this.props.title,
+        text: this.state.title,
         textStyle: {
           fontSize: 14
         }
@@ -26,11 +46,11 @@ class DoughnutPie extends React.Component<IDoughnutPie, {}> {
       legend: {
         orient: 'vertical',
         x: 'left',
-        data: [ '直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎' ]
+        data: this.state.legend
       },
       series: [
         {
-          name: '访问来源',
+          name: this.state.title,
           type: 'pie',
           radius: ['50%', '70%'],
           avoidLabelOverlap: false,
@@ -52,20 +72,14 @@ class DoughnutPie extends React.Component<IDoughnutPie, {}> {
               show: false
             }
           },
-          data: [
-            {value: 335, name: '直接访问'},
-            {value: 310, name: '邮件营销'},
-            {value: 234, name: '联盟广告'},
-            {value: 135, name: '视频广告'},
-            {value: 1548, name: '搜索引擎'}
-          ]
+          data: this.state.vaules
         }
       ]
     });
   }
   render() {
     return (
-      <div id="doughnutPie" style={{ display: 'inline-block', width: this.props.width, height: this.props.height }} />
+      <div id={this.state.id} style={{ display: 'inline-block', width: this.state.width, height: this.state.height }} />
     );
   }
 }

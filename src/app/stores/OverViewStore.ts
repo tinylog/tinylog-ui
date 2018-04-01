@@ -3,6 +3,7 @@ import api from '../api/host';
 import { IOverview, IOverviewQuery } from '../interfaces';
 import moment from 'moment';
 
+// 网站的基本数据信息
 class OverViewStore {
   @observable overviews: (IOverview)[];
   constructor () {

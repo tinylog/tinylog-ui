@@ -6,11 +6,11 @@ import PvUvLine from '../../../components/Echart/PvUvLine';
 import { IPvUvLine } from '../../../components/Echart/PvUvLine';
 import { ISommthedLine } from '../../../components/Echart/SmoothedLine';
 import SmoothedLine from '../../../components/Echart/SmoothedLine';
-import { IBaseMsg } from '../../../interfaces'
+import { IBaseMsgPage } from '../../../interfaces'
 import Title from '../../../components/Title';
 import './index.css';
 
-interface BaseMsgProps extends IBaseMsg {
+interface BaseMsgProps extends IBaseMsgPage {
 }
 
 interface BaseMsgState {
