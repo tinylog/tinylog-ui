@@ -20,7 +20,7 @@ class HostStore {
         this.id = res.data[0].id;
         this.timezone = res.data[0].timezone;
         this.userId = res.data[0].userId;
-        this.website = res.data[0].website;
+        this.website = res.data[0].domain;
       })
       return res;
     } catch (error) {

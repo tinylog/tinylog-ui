@@ -72,7 +72,6 @@ class AssetsStore {
     runInAction (() => {
       this.assets = res.data;
     })
-    console.log(res);
     return res;
   }
 }

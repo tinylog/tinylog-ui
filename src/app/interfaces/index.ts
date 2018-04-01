@@ -58,6 +58,7 @@ export interface IOverview {
 export interface IAssetsQuery extends IBaseQuery {
 }
 export interface IAssets {
+  key?: number|string,
   avgDuration: number;
   avgRedirect: number;
   avgRequest: number;

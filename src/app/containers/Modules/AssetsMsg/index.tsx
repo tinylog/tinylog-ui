@@ -6,7 +6,7 @@ import Title from '../../../components/Title';
 import Bar from '../../../components/Echart/Bar';
 import DoughnutPie from '../../../components/Echart/DoughnutPie';
 import { IAssetsMsgPage } from '../../../interfaces';
-import { Table, Icon, Divider } from 'antd';
+import { Table } from 'antd';
 import './index.css';
 
 interface AssetsMsgProps extends IAssetsMsgPage {
@@ -38,49 +38,38 @@ class AssetsMsg extends React.Component<AssetsMsgProps, {}> {
       { name: '平均TCP请求时间:', value: this.props.assets.avgRequest + 'ms' }
     ];
     const columns = [{
-      title: 'Name',
+      title: '资源地址',
       dataIndex: 'name',
       key: 'name',
       render: text => <a href="#">{text}</a>,
     }, {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: '平均总时长',
+      dataIndex: 'avgDuration',
+      key: 'avgDuration',
+      render: text => <span>{text + 'ms'}</span>
     }, {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: '平均重定向时长',
+      dataIndex: 'avgRedirect',
+      key: 'avgRedirect',
+      render: text => <span>{text + 'ms'}</span>
+    }, {
+      title: '平均TCP请求时长',
+      dataIndex: 'avgRequest',
+      key: 'avgRequest',
+      render: text => <span>{text + 'ms'}</span>
+    }, {
+      title: '平均DNS查询时长',
+      dataIndex: 'avgLookupDomain',
+      key: 'avgLookupDomain',
+      render: text => <span>{text + 'ms'}</span>
     }, {
       title: 'Action',
       key: 'action',
       render: (text, record) => (
         <span>
-          <a href="#">Action 一 {record.name}</a>
-          <Divider type="vertical" />
-          <a href="#">Delete</a>
-          <Divider type="vertical" />
-          <a href="#" className="ant-dropdown-link">
-            More actions <Icon type="down" />
-          </a>
+          <a href="#" className="ant-dropdown-link">详情</a>
         </span>
       ),
-    }];
-
-    const data = [{
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
     }];
     return (
       <div>
@@ -104,7 +93,13 @@ class AssetsMsg extends React.Component<AssetsMsgProps, {}> {
             vaules={this.props.assets.typeDuration.slice().map(item => ({ name: item.entryType, value: item.avgDuration }))}
           />
         </div>
-        <Table columns={columns} dataSource={data} />
+        <Table 
+          columns={columns} 
+          dataSource={this.props.assets.assets.slice().map((item, index) => { 
+            item.key = index; 
+            return item;
+          })} 
+        />
       </div>
     )
   }
