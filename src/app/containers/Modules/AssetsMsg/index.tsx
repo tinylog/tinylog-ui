@@ -87,14 +87,21 @@ class AssetsMsg extends React.Component<AssetsMsgProps, {}> {
         <Detail title={title} messages={messages} />
         <Title title="网站资源详情" />
         <div className="assets-msg-data-cont">
-          <Bar title="资源时长" width={500} height={300} />
+          <Bar
+            title="资源总时长"
+            id="assetsBar"
+            width={500}
+            height={300}
+            xValues={this.props.assets.assets.map(item => item.name)}
+            yValues={this.props.assets.assets.map(item => item.avgDuration)}
+          />
           <DoughnutPie
             id="assetsDoughnutPie"
             legend={this.props.assets.assets.slice().map(item => item.entryType)}
-            title="资源类型占比" 
-            width={500} 
+            title="资源类型总时长占比" 
+            width={500}
             height={300}
-            vaules={this.props.assets.assets.slice().map(item => ({ name: item.entryType, value: item.avgDuration }))}
+            vaules={this.props.assets.typeDuration.slice().map(item => ({ name: item.entryType, value: item.avgDuration }))}
           />
         </div>
         <Table columns={columns} dataSource={data} />

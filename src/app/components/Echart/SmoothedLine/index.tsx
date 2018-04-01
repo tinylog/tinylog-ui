@@ -6,8 +6,8 @@ export interface ISommthedLine {
   height: number;
   id: string;
   title: string;
-  xValues?: (string)[];
-  yValues?: (string)[];
+  xValues?: (string|number)[];
+  yValues?: (string|number)[];
 }
 
 class SommthedLine extends React.Component<ISommthedLine, ISommthedLine> {

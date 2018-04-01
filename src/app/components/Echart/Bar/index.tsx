@@ -5,11 +5,26 @@ interface IBar {
   width: number;
   height: number;
   title: string;
+  id: string;
+  xValues: (string|number)[];
+  yValues: (string|number)[];
 }
 
-class Bar extends React.Component<IBar, {}> {
+class Bar extends React.Component<IBar, IBar> {
+  constructor (props: IBar, state: IBar) {
+    super(props, state)
+    this.state = Object.assign({}, this.props)
+  }
+  componentWillReceiveProps (nextProps: IBar) {
+    this.setState(nextProps, () => {
+      this.initChart();
+    })
+  }
   componentDidMount() {
-    let chart = echarts.init(document.getElementById('bar'), 'macarons');
+    this.initChart();
+  }
+  initChart () {
+    let chart = echarts.init(document.getElementById(this.state.id), 'macarons');
     chart.setOption({
       title: {
         left: 'center',
@@ -34,7 +49,7 @@ class Bar extends React.Component<IBar, {}> {
       xAxis: [
         {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: this.state.xValues,
           axisTick: {
             alignWithLabel: true
           }
@@ -47,17 +62,17 @@ class Bar extends React.Component<IBar, {}> {
       ],
       series: [
         {
-          name: '直接访问',
+          name: this.state.title,
           type: 'bar',
           barWidth: '60%',
-          data: [10, 52, 200, 334, 390, 330, 220]
+          data: this.state.yValues
         }
       ]
     });
   }
   render() {
     return (
-      <div id="bar" style={{ display: 'inline-block', width: this.props.width, height: this.props.height }} />
+      <div id={this.state.id} style={{ display: 'inline-block', width: this.props.width, height: this.props.height }} />
     );
   }
 }

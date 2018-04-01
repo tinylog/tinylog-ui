@@ -6,9 +6,9 @@ export interface IPvUvLine {
   height: number;
   id: string;
   title: string;
-  xValues?: (string)[];
-  pvValues?: (string)[];
-  uvValues?: (string)[];
+  xValues?: (string|number)[];
+  pvValues?: (string|number)[];
+  uvValues?: (string|number)[];
 }
 
 class PvUvLine extends React.Component<IPvUvLine, IPvUvLine> {

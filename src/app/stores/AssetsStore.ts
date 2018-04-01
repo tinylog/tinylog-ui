@@ -48,6 +48,22 @@ class AssetsStore {
   @computed get avgRequest () {
     return this.totalRequest / this.assetsCount
   }
+  @computed get typeDuration () {
+    let assets: (IAssets)[] = [];
+    this.assets.slice().forEach(item => {
+      let flag = false;
+      assets.forEach(_item => {
+        if (item.entryType === _item.entryType) {
+          _item.avgDuration = _item.avgDuration || 0 + item.avgDuration
+          flag = true;
+        }
+      })
+      if (!flag) {
+        assets.push(item);
+      }
+    })
+    return assets;
+  }
   constructor () {
     this.assets = []
   }

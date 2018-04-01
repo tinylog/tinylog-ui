@@ -3,7 +3,7 @@ import echarts from 'echarts';
 
 interface IDoughtPieVal {
   name: string;
-  value: number;
+  value: number|string;
 }
 
 interface IDoughnutPie {
@@ -11,7 +11,7 @@ interface IDoughnutPie {
   height: number;
   id: string;
   title: string;
-  legend: (string)[];
+  legend: (string|number)[];
   vaules: (IDoughtPieVal)[];
 }
 
