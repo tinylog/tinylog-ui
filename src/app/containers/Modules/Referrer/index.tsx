@@ -19,9 +19,8 @@ class Referrer extends React.Component<ReferrerProps, {}> {
     await this.props.commmon.getReffer({
       id: this.props.host.id,
       to: new Date().toISOString(),
-      from: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString()
+      from: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
     })
-    console.log(this.props.commmon.referrer.slice())
   }
   render () {
     const title = '网站来源地址';

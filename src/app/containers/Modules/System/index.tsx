@@ -17,6 +17,12 @@ interface SystemProps extends ICommonDataPage {
 class System extends React.Component<SystemProps, {}> {
   async componentWillMount () {
     await this.props.host.getHost();
+    await this.props.commmon.getCity({
+      id: this.props.host.id,
+      to: new Date().toISOString(),
+      from: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+    });
+    console.log(this.props.commmon.city, 'dddd')
     await this.props.commmon.getOs({
       id: this.props.host.id,
       to: new Date().toISOString(),
@@ -27,7 +33,6 @@ class System extends React.Component<SystemProps, {}> {
       to: new Date().toISOString(),
       from: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString()
     })
-    console.log(this.props.commmon.osName.slice())
   }
   render () {
     const title = '系统环境数据';

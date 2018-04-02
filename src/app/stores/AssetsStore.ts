@@ -53,8 +53,9 @@ class AssetsStore {
     this.assets.slice().forEach(item => {
       let flag = false;
       assets.forEach(_item => {
-        if (item.entryType === _item.entryType) {
-          _item.avgDuration = _item.avgDuration || 0 + item.avgDuration
+        let tempItem = { ..._item }
+        if (item.entryType === tempItem.entryType) {
+          tempItem.avgDuration = tempItem.avgDuration || 0 + item.avgDuration
           flag = true;
         }
       })

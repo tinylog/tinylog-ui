@@ -3,7 +3,7 @@ import { Layout, Menu } from 'antd';
 import { headerPath } from '../../config/path';
 import { autobind } from 'core-decorators';
 import { IAuth } from '../../interfaces/index';
-
+import { Link } from 'react-router-dom';
 import './style.css';
 
 const { Header } = Layout;
@@ -22,7 +22,7 @@ class HeaderLayout extends React.Component<HeaderLayoutProps, {}> {
   render () {
     return (
       <Header className="header">
-        <div className="logo">Tiny Log</div>
+        <div className="logo"><Link to="/" style={{color: '#fff', textDecoration: 'none'}}>Tiny Log</Link></div>
         <Menu
           theme="dark"
           mode="horizontal"

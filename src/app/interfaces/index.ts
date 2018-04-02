@@ -1,6 +1,7 @@
 import { IBase, IAssets } from './index';
 import { RouteComponentProps } from 'react-router';
-import { 
+import {
+  RouterStore,
   AuthStore, 
   HostStore, 
   OverViewStore, 
@@ -9,6 +10,7 @@ import {
 } from '../stores';
 
 export interface IBase extends RouteComponentProps<{}> {
+  router: RouterStore;
 }
 
 export interface IAuth extends IBase {

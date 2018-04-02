@@ -1,20 +1,16 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
-import { RouteComponentProps, Route } from 'react-router';
-import { RouterStore } from 'mobx-react-router';
+import { Route } from 'react-router';
 import { Layout } from 'antd';
-import { TimerStore, AuthStore } from '../../stores';
 import { autobind } from 'core-decorators';
-import Header from '../../layout/Header';
 import Sider from '../../layout/Sider';
+import { IAuth } from '../../interfaces';
 
 // components
 import ContentHeader from '../../components/ContentHeader';
 import Footer from '../../components/Footer';
 
 // modules
-import View from '../View';
-import View2 from '../View2';
 import BaseMsg from '../../containers/Modules/BaseMsg';
 import AssetsMsg from '../../containers/Modules/AssetsMsg';
 import Referrer from '../../containers/Modules/Referrer';
@@ -23,17 +19,14 @@ import System from '../../containers/Modules/System';
 
 const { Content } = Layout;
 
-interface AppProps extends RouteComponentProps<{}> {
-  timer: TimerStore;
-  router: RouterStore;
-  auth: AuthStore;
+interface AppProps extends IAuth {
 }
 
 interface AppState {
   title: string;
 }
 
-@inject('timer', 'router', 'auth')
+@inject('router', 'auth')
 @observer
 @autobind
 class App extends React.Component<AppProps, AppState> {
@@ -43,7 +36,7 @@ class App extends React.Component<AppProps, AppState> {
       title: '欢迎使用tinglog^-^'
     };
   }
-  componentWillMount () {
+  async componentWillMount () {
     if (!localStorage.getItem('token')) {
       this.props.history.push('/signIn');
       return;
@@ -57,7 +50,6 @@ class App extends React.Component<AppProps, AppState> {
   render () {
     return (
       <Layout style={{ height: '100%', minWidth: 1280 }}>
-        <Header {...this.props} />
         <Layout style={{paddingBottom: 10}}>
           <Sider onMenuItemClick={this.handleMenuItemClick}/>
           <Layout>
@@ -69,8 +61,6 @@ class App extends React.Component<AppProps, AppState> {
                 <Route exact={true} path="/common/system" component={System}/>
                 <Route exact={true} path="/performance/webMsg" component={WebPerformance}/>
                 <Route exact={true} path="/performance/assetsMsg" component={AssetsMsg}/>
-                <Route exact={true} path="/view" component={View}/>
-                <Route exact={true} path="/view2" component={View2}/>
               </Content>
               <Footer/>
             </Content>

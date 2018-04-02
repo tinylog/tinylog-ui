@@ -6,7 +6,6 @@ import { useStrict } from 'mobx';
 import { Provider } from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { 
-  TimerStore, 
   TokenStore, 
   AuthStore, 
   HostStore, 
@@ -17,7 +16,7 @@ import {
 import registerServiceWorker from './registerServiceWorker';
 import { Root } from './containers/Root';
 import './index.css';
-import App from './containers/App';
+import Container from './containers/Container';
 import SignIn from './containers/Auth/signIn';
 import SignUp from './containers/Auth/signUp';
 import './macarons';
@@ -29,7 +28,6 @@ const routerStore =  new RouterStore();
 const history = syncHistoryWithStore(browserHistory, routerStore);
 const rootStore = {
   token: new TokenStore(),
-  timer: new TimerStore(),
   auth: new AuthStore(),
   host: new HostStore(),
   overview: new OverViewStore(),
@@ -53,7 +51,7 @@ ReactDOM.render(
           />
           <Route
             path="/"
-            component={App}
+            component={Container}
           />
         </Switch>
       </Router>
