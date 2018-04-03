@@ -1,6 +1,6 @@
 import { observable, action, runInAction, computed } from 'mobx';
 import api from '../api/assets';
-import { IAssetsQuery, IAssets } from './../interfaces/index';
+import { IAssetsQuery, IAssets } from '../interfaces/index';
 
 // 网站的资源信息
 class AssetsStore {

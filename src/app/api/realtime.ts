@@ -1,0 +1,1 @@
+import rest from './axios';

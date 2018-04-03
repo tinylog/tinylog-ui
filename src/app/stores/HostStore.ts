@@ -27,9 +27,18 @@ class HostStore {
     localStorage.setItem('timezone', host.timezone);
     localStorage.setItem('userId', host.userId);
   }
+  @action async patchHost (id: string) {
+    try {
+      const { data: res } = await api.patchHost({ id });
+      return res;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
   @action async deleteHost (id: string) {
     try {
-      const { data: res } = await api.deleteHost({ id })
+      const { data: res } = await api.deleteHost({ id });
       return res;
     } catch (error) {
       console.log(error)

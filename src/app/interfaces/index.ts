@@ -1,4 +1,4 @@
-import { IBase, IAssets } from './index';
+import { IBase, IAssets, IBaseMsgPage } from './index';
 import { RouteComponentProps } from 'react-router';
 import {
   RouterStore,
@@ -114,4 +114,21 @@ export interface IHostBody {
   id?: string;
   domain?: string;
   timezone?: string;
+}
+
+// 网站页面性能信息
+
+export interface IPageQuery extends IBaseQuery {
+}
+
+export interface IPage {
+  avgLoadPage: number;
+  avgDomReady: number;
+  avgRedirect: number;
+  avgLookupDomain: number;
+  avgTtfb: number;
+  avgRequest: number;
+  avgTcp: number;
+  avgLoadEvent: number;
+  url: string;
 }

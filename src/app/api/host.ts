@@ -17,6 +17,13 @@ const postHost = (data: IHostBody) => {
   })
 }
 
+const patchHost = (data: IHostBody) => {
+  return rest.request({
+    method: 'patch',
+    url: `/host/${data.id}`
+  })
+}
+
 const deleteHost = (data: IHostBody) => {
   return rest.request({
     method: 'delete',
@@ -42,5 +49,6 @@ export default {
   getHost,
   getOverview,
   postHost,
-  deleteHost
+  deleteHost,
+  patchHost
 }
