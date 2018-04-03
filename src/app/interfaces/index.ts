@@ -101,3 +101,17 @@ export interface ICommonData {
   value: string|number;
   count: number
 }
+
+export interface IHost {
+  key?: number;
+  id: string;
+  timezone: string;
+  userId: string;
+  domain: string;
+}
+
+export interface IHostBody {
+  id?: string;
+  domain?: string;
+  timezone?: string;
+}

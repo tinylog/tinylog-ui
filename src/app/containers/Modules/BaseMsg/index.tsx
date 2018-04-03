@@ -58,7 +58,7 @@ class BaseMsg extends React.Component<BaseMsgProps, BaseMsgState> {
     const title = '信息导航';
     const messages = [
       { name: '名称:', value: 'TinyLog' },
-      { name: '域名:', value: this.props.host.website },
+      { name: '域名:', value: this.props.host.domain },
       { name: 'ip地址:', value: '1000' },
       { name: '健康指标:', value: '正常' },
       { name: '用户数量:', value: '1000个' }

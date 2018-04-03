@@ -63,7 +63,7 @@ class AssetsMsg extends React.Component<AssetsMsgProps, {}> {
       key: 'avgLookupDomain',
       render: text => <span>{text + 'ms'}</span>
     }, {
-      title: 'Action',
+      title: '操作',
       key: 'action',
       render: (text, record) => (
         <span>

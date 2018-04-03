@@ -1,5 +1,6 @@
 import rest from './axios';
 import { IOverviewQuery } from '../interfaces'
+import { IHostBody } from '../interfaces';
 
 const getHost = () => {
   return rest.request({
@@ -7,6 +8,24 @@ const getHost = () => {
     url: '/host'
   });
 };
+
+const postHost = (data: IHostBody) => {
+  return rest.request({
+    method: 'post',
+    url: '/host/create',
+    data
+  })
+}
+
+const deleteHost = (data: IHostBody) => {
+  return rest.request({
+    method: 'delete',
+    url: '/host',
+    data: {
+      list: [data.id]
+    }
+  })
+}
 
 const getOverview = (query: IOverviewQuery) => {
   return rest.request({
@@ -21,5 +40,7 @@ const getOverview = (query: IOverviewQuery) => {
 
 export default {
   getHost,
-  getOverview
+  getOverview,
+  postHost,
+  deleteHost
 }
