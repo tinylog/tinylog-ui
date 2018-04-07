@@ -2,7 +2,7 @@ import axios from 'axios';
 import { message } from 'antd';
 
 axios.interceptors.request.use(function (config: any) {
-  config.baseURL = 'https://tinylog.ruiming.me';
+  config.baseURL = 'https://tinylog.ruiming.me/api';
   config.headers = {
     authorization: `Bearer ${localStorage.getItem('token')}`
   }
