@@ -50,6 +50,7 @@ class SignUp extends React.Component<IAuth, SignUpState> {
   render () {
     return (
       <div className="auth">
+        <div className="auth-logo"/>
         <Form onSubmit={this.handleSubmit} className="login-form">
           <FormItem>
             <Input prefix={<Icon type="mail"/>} type="email" placeholder="邮箱" onChange={this.handleInputEmail} />

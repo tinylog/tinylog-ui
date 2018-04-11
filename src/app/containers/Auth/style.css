@@ -1,4 +1,5 @@
 .auth {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,4 +17,16 @@
 
 .auth .login-form-button {
   width: 100%;
+}
+
+.auth-logo {
+  position: absolute;
+  width: 400px;
+  height: 140px;
+  background: url(/images/tinylog.png) no-repeat;
+  background-size: 100% 100%;
+  margin: auto;
+  top: 100px;
+  left: 0;
+  right: 0;
 }

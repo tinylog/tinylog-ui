@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import { IAuth } from '../../interfaces/index';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { autobind } from 'core-decorators';
 import { ISignIn } from '../../interfaces';
@@ -44,6 +44,7 @@ class SignIn extends React.Component<IAuth, SignInState> {
   render () {
     return (
       <div className="auth">
+        <div className="auth-logo"/>
         <Form onSubmit={this.handleSubmit} className="login-form">
           <FormItem>
             <Input prefix={<Icon type="mail"/>} type="email" placeholder="邮箱" onChange={this.handleInputEmail} />
@@ -52,8 +53,6 @@ class SignIn extends React.Component<IAuth, SignInState> {
             <Input prefix={<Icon type="lock"/>} type="password" placeholder="密码" onChange={this.handleInputPass}/>
           </FormItem>
           <FormItem>
-              <Checkbox>记住密码</Checkbox>
-              <a className="login-form-forgot" href="">忘记密码</a>
               <Button type="primary" htmlType="submit" className="login-form-button">
                 登陆
               </Button>
