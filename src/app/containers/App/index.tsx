@@ -18,6 +18,7 @@ import WebPerformance from '../../containers/Modules/WebPerformance';
 import System from '../../containers/Modules/System';
 import User from '../../containers/Modules/User';
 import Home from '../../containers/Modules/Home';
+import Error from '../../containers/Modules/Error';
 
 const { Content } = Layout;
 
@@ -65,6 +66,7 @@ class App extends React.Component<AppProps, AppState> {
                 <Route exact={true} path="/common/user" component={User}/>
                 <Route exact={true} path="/performance/webMsg" component={WebPerformance}/>
                 <Route exact={true} path="/performance/assetsMsg" component={AssetsMsg}/>
+                <Route exact={true} path="/error" component={Error}/>
               </Content>
               <Footer/>
             </Content>

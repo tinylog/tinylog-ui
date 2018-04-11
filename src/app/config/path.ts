@@ -48,10 +48,7 @@ export const siderPath = [
     icon: 'notification',
     menuItems: [{
       title: '错误概览',
-      path: '/view'
-    }, {
-      title: '错误定位',
-      path: '/view2'
+      path: '/error'
     }]
   }
 ];

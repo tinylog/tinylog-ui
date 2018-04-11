@@ -270,7 +270,7 @@ class ChinaMap extends React.Component<IChinaMap, IChinaMap> {
   }
   render() {
     return (
-      <div id="chinaMap" style={{ display: 'inline-block', width: 1000, height: 600 }} />
+      <div id="chinaMap" style={{ display: 'inline-block', width: 1000, height: 500 }} />
     )
   }
 }
