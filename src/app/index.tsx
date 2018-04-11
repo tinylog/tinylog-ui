@@ -20,6 +20,7 @@ import Container from './containers/Container';
 import SignIn from './containers/Auth/signIn';
 import SignUp from './containers/Auth/signUp';
 import './macarons';
+import 'echarts/map/js/world';
 
 useStrict(true);
 

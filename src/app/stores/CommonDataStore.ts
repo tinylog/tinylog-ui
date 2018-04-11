@@ -46,6 +46,10 @@ class CommonDataStore {
           count: item.count
         }
       })
+      this.country.push({
+        value: 'China',
+        count: 1000
+      })
     })
     console.log(res)
   }

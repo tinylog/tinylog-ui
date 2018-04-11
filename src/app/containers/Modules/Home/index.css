@@ -1,0 +1,7 @@
+.home-logo {
+  width: 600px;
+  height: 200px;
+  background: url(/images/tinylog.png) no-repeat;
+  background-size: 100% 100%;
+  margin: 150px auto;
+}

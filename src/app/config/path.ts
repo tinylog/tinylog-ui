@@ -4,10 +4,6 @@ export const headerPath = [
     path: '/website',
   },
   {
-    title: '控制面板',
-    path: '/view2'
-  },
-  {
     title: '退出',
     path: '/signIn'
   }
