@@ -6,7 +6,8 @@ import {
   HostStore, 
   OverViewStore, 
   AssetsStore,
-  CommonDataStore
+  CommonDataStore,
+  PageStore
 } from '../stores';
 
 export interface IBase extends RouteComponentProps<{}> {
@@ -43,6 +44,12 @@ export interface IAssetsMsgPage extends IAuth {
 export interface ICommonDataPage extends IAuth {
   host: HostStore,
   commmon: CommonDataStore
+}
+
+// 页面性能页面
+export interface IPageDataPage extends IAuth {
+  host: HostStore,
+  page: PageStore
 }
 
 /**
@@ -122,6 +129,7 @@ export interface IPageQuery extends IBaseQuery {
 }
 
 export interface IPage {
+  key?: number;
   avgLoadPage: number;
   avgDomReady: number;
   avgRedirect: number;

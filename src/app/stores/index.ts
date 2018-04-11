@@ -6,6 +6,7 @@ import HostStore from './HostStore';
 import OverViewStore from './OverViewStore';
 import AssetsStore from './AssetsStore';
 import CommonDataStore from './CommonDataStore'
+import PageStore from './PageStore';
 
 export {
   TimerStore,
@@ -15,5 +16,6 @@ export {
   HostStore,
   OverViewStore,
   AssetsStore,
+  PageStore,
   CommonDataStore
 };
