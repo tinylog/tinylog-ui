@@ -1,4 +1,4 @@
-import { IBase, IAssets, IBaseMsgPage } from './index';
+import { IBase, IAssets, IBaseMsgPage, IRealTime } from './index';
 import { RouteComponentProps } from 'react-router';
 import {
   RouterStore,
@@ -7,7 +7,8 @@ import {
   OverViewStore, 
   AssetsStore,
   CommonDataStore,
-  PageStore
+  PageStore,
+  RealTimeStore
 } from '../stores';
 
 export interface IBase extends RouteComponentProps<{}> {
@@ -52,13 +53,19 @@ export interface IPageDataPage extends IAuth {
   page: PageStore
 }
 
+// 实时数据页面
+export interface IOverViewRealTimePage extends IAuth {
+  host: HostStore,
+  realtime: RealTimeStore
+}
+
 /**
  * api接口数据格式 -----------------------------------------------------
  */
 // 基本时间查询条件参数接口
 export interface IBaseQuery {
-  from: string;
-  to: string;
+  from?: string;
+  to?: string;
   step?: string;
   id: string;
 }
@@ -139,4 +146,38 @@ export interface IPage {
   avgTcp: number;
   avgLoadEvent: number;
   url: string;
+}
+
+// 网站实时数据
+
+export interface IRealTimeQuery extends IBaseQuery {
+}
+
+export interface IReferrerRealTime {
+  referrer: string;
+  count: number;
+  key?: number;
+} 
+
+export interface IBrowserRealTime {
+  browserName: string;
+  count: number;
+}
+
+export interface IDeviceRealTime {
+  deviceType: string;
+  count: number;
+}
+
+export interface ICountryRealTime {
+  country: string;
+  count: number;
+}
+
+export interface IRealTime {
+  count: number;
+  referrer: (IReferrerRealTime)[];
+  browserName: (IBrowserRealTime)[];
+  deviceType: (IDeviceRealTime)[];
+  country: (ICountryRealTime)[];
 }

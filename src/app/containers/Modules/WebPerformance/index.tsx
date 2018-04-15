@@ -64,11 +64,6 @@ class WebPerformance extends React.Component<IPageDataPage, {}> {
       key: 'avgRequest',
       render: text => <span>{text + 'ms'}</span>
     }, {
-      title: '页面加载时间',
-      dataIndex: 'avgLoadPage',
-      key: 'avgLoadPage',
-      render: text => <span>{text + 'ms'}</span>
-    }, {
       title: '响应时间',
       dataIndex: 'avgTtfb',
       key: 'avgTtfb',

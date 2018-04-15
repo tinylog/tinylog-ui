@@ -66,10 +66,10 @@ class AssetsStore {
     return assets;
   }
   constructor () {
-    this.assets = []
+    this.assets = [];
   }
   @action async getAssets (query: IAssetsQuery) {
-    const { data: res } = await api.getAssetsSlow(query)
+    const { data: res } = await api.getAssetsSlow(query);
     runInAction (() => {
       this.assets = res.data;
     })

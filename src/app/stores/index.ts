@@ -7,6 +7,7 @@ import OverViewStore from './OverViewStore';
 import AssetsStore from './AssetsStore';
 import CommonDataStore from './CommonDataStore'
 import PageStore from './PageStore';
+import RealTimeStore from './RealTimeStore';
 
 export {
   TimerStore,
@@ -17,5 +18,6 @@ export {
   OverViewStore,
   AssetsStore,
   PageStore,
-  CommonDataStore
+  CommonDataStore,
+  RealTimeStore
 };

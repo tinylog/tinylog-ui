@@ -19,6 +19,14 @@ export const siderPath = [
     }]
   },
   {
+    title: '实时数据',
+    icon: 'dashboard',
+    menuItems: [{
+      title: '实时预览',
+      path: '/realtime/webMsg'
+    }]
+  },
+  {
     title: '性能分析',
     icon: 'laptop',
     menuItems: [{

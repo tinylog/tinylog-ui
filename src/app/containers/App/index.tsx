@@ -19,6 +19,7 @@ import System from '../../containers/Modules/System';
 import User from '../../containers/Modules/User';
 import Home from '../../containers/Modules/Home';
 import Error from '../../containers/Modules/Error';
+import OverViewRealTime from '../../containers/Modules/RealTime/overView';
 
 const { Content } = Layout;
 
@@ -52,7 +53,7 @@ class App extends React.Component<AppProps, AppState> {
   }
   render () {
     return (
-      <Layout style={{ height: '100%', minWidth: 1280 }}>
+      <Layout style={{ height: '100%', minWidth: 1580 }}>
         <Layout style={{paddingBottom: 10}}>
           <Sider onMenuItemClick={this.handleMenuItemClick}/>
           <Layout>
@@ -67,6 +68,7 @@ class App extends React.Component<AppProps, AppState> {
                 <Route exact={true} path="/performance/webMsg" component={WebPerformance}/>
                 <Route exact={true} path="/performance/assetsMsg" component={AssetsMsg}/>
                 <Route exact={true} path="/error" component={Error}/>
+                <Route exact={true} path="/realtime/webMsg" component={OverViewRealTime}/>
               </Content>
               <Footer/>
             </Content>
